@@ -1,3 +1,457 @@
 Nginx is a free open source software that can be configured as a web server, so that your ec2 instance can run successfully (with the help of nginx).
 
 
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ls
+'New Text Document.txt'   index.html
+ about.html               names.txt
+ avirupkey.pem            next.html
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git init
+Reinitialized existing Git repository in D:/AWS_EC2/.git/
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ls
+'New Text Document.txt'   index.html
+ about.html               names.txt
+ avirupkey.pem            next.html
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ls -a
+ ./     'New Text Document.txt'   index.html
+ ../     about.html               names.txt
+ .git/   avirupkey.pem            next.html
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ls .git
+HEAD    description  info/     refs/
+config  hooks/       objects/
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ touch names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+warning: in the working copy of 'avirupkey.pem', LF will be replaced by CRLF the next time Git touches it
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   New Text Document.txt
+        new file:   about.html
+        new file:   avirupkey.pem
+        new file:   index.html
+        new file:   names.txt
+        new file:   next.html
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ rm -rf names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   New Text Document.txt
+        new file:   about.html
+        new file:   avirupkey.pem
+        new file:   index.html
+        new file:   names.txt
+        new file:   next.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ls
+'New Text Document.txt'   avirupkey.pem   next.html
+ about.html               index.html
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ touch names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   New Text Document.txt
+        new file:   about.html
+        new file:   avirupkey.pem
+        new file:   index.html
+        new file:   names.txt
+        new file:   next.html
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git commit -m "names.txt file added"
+[master (root-commit) 87c9137] names.txt file added
+ 6 files changed, 60 insertions(+)
+ create mode 100644 New Text Document.txt
+ create mode 100644 about.html
+ create mode 100644 avirupkey.pem
+ create mode 100644 index.html
+ create mode 100644 names.txt
+ create mode 100644 next.html
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ vim names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ cat names.txt
+Let's crack it bro
+Avirup Mazumder
+roll -19
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+warning: in the working copy of 'names.txt', LF will be replaced by CRLF the next time Git touches it
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git commit -m "names.txt file updated"
+[master 07def3f] names.txt file updated
+ 1 file changed, 3 insertions(+)
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git restore --staged names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ touch ex.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   ex.txt
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git restore --staged ex.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ex.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git commit -m "names.txt file updated"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ex.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git commit -m "ex.txt file updated"
+[master b491156] ex.txt file updated
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ex.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git log
+commit b49115608f84d8672daf2345b59df74b89494c92 (HEAD -> master)
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:49:40 2023 +0530
+
+    ex.txt file updated
+
+commit 07def3f05a4123b9ce23e5cdbd239c01760cea38
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:45:53 2023 +0530
+
+    names.txt file updated
+
+commit 87c9137d716c10b72faff287f3c75b2de14b2e14
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:40:32 2023 +0530
+
+    names.txt file added
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ rm names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ rm ex.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ex.txt
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ls
+'New Text Document.txt'   avirupkey.pem   next.html
+ about.html               index.html
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ls
+'New Text Document.txt'   avirupkey.pem   next.html
+ about.html               index.html
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git commit -m "Files are deleted"
+[master a5aff0f] Files are deleted
+ 2 files changed, 3 deletions(-)
+ delete mode 100644 ex.txt
+ delete mode 100644 names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git log
+commit a5aff0f625dbef6ff878d680437135a5874ae98d (HEAD -> master)
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:53:35 2023 +0530
+
+    Files are deleted
+
+commit b49115608f84d8672daf2345b59df74b89494c92
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:49:40 2023 +0530
+
+    ex.txt file updated
+
+commit 07def3f05a4123b9ce23e5cdbd239c01760cea38
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:45:53 2023 +0530
+
+    names.txt file updated
+
+commit 87c9137d716c10b72faff287f3c75b2de14b2e14
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:40:32 2023 +0530
+
+    names.txt file added
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git reset 87c9137d716c10b72faff287f3c75b2de14b2e14  Unstaged changes after reset:
+D       names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git log
+commit 87c9137d716c10b72faff287f3c75b2de14b2e14 (HEAD -> master)
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:40:32 2023 +0530
+
+    names.txt file added
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    names.txt
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ touch surnames.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    names.txt -> surnames.txt
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ vim surnames.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ touch houses.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git add .
+warning: in the working copy of 'surnames.txt', LF will be replaced by CRLF the next time Git touches it
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    names.txt -> houses.txt
+        new file:   surnames.txt
+
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git stash
+Saved working directory and index state WIP on master: 87c9137 names.txt file added
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git log
+commit 87c9137d716c10b72faff287f3c75b2de14b2e14 (HEAD -> master)
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:40:32 2023 +0530
+
+    names.txt file added
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ cat names.txt
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   houses.txt
+        new file:   surnames.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+Dropped refs/stash@{0} (8e9c8902de82bb3117b65e253fb9734c4015857c)
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git stash
+Saved working directory and index state WIP on master: 87c9137 names.txt file added
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git stash clear
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git log
+commit 87c9137d716c10b72faff287f3c75b2de14b2e14 (HEAD -> master)
+Author: exd35-avi <avirupmazumder82299@gmail.com>
+Date:   Sat Apr 15 16:40:32 2023 +0530
+
+    names.txt file added
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git stash pop
+No stash entries found.
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git remote add origin https://github.com/exd35-avi/gitCommunity.git
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git remote -v
+origin  https://github.com/exd35-avi/gitCommunity.git (fetch)
+origin  https://github.com/exd35-avi/gitCommunity.git (push)
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 2.12 KiB | 2.12 MiB/s, done.
+Total 8 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/exd35-avi/gitCommunity.git
+ * [new branch]      master -> master
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$ ^C
+
+aviru@AVIRUP MINGW64 /d/AWS_EC2 (master)
+$
+
+
+
